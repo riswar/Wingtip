@@ -1,0 +1,52 @@
+
+<div id="body">
+  <section class="featured">
+    <div class="content-wrapper">
+      <header class="title">
+        <h1>Products</h1>
+      
+      </header>
+      <section class="featured">
+        <div style="margin-left: 2em">
+
+          <p *ngIf="!products"><em>Loading...</em></p>
+
+          <table>
+            <tr>
+              <td style="width: 30%;vertical-align:top;">
+                <header class="title">
+                  <h1>Wingtip Toys</h1>
+                  <h2>Wingtip Toys can help you find the perfect gift</h2>
+                </header>
+                <p>
+                  We're all about transportation toys. You can order
+                  any of our toys today. Each toy listing has detailed
+                  information to help you choose the right toy.
+                </p>
+              </td>
+              <td>
+                <table>
+                  <tr *ngFor="let product of products">
+                    <td>
+                      <img border="1" height="75" src="assets/img/{{ product.imagePath }}" width="100">
+                    </td>
+                    <td>
+                      {{ product.productName }}
+                      <br>
+                      <span class="ProductPrice">
+                        <strong>Price:</strong>
+                        ${{ product.unitPrice }}
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+      </section>
+    </div>
+  </section>
+  <section class="content-wrapper main-content clear-fix"></section>
+</div>
